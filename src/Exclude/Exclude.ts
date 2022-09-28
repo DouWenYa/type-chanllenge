@@ -9,9 +9,9 @@
 type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'
 **/
 namespace Exclude{
-    type Result = MyExclude<'a' | 'b' | 'c', 'a'> // 'b' | 'c'
+    type Result = MyExclude<'a' | 'b' | 'c', 'a'|'b'> // 'b' | 'c'
 
-    type MyExclude<U ,K> = K in (keyof U)
+    type MyExclude<T,U> = T extends U?never:T
 
 
     
